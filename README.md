@@ -6,9 +6,10 @@
 
 This project contains many projects that are lessons of ES6 (ECMAScript 6) that is given as tasks to be solved at  ALX School
 
+<br><br>
+
 ## Table of content
 
-<br><br>
 
 | Repository                 |                    Description                 | 
 | -------------------------- | ---------------------------------------------- |
