@@ -7,8 +7,12 @@ export default function cleanSet(set, startString) {
   const result = [];
 
   for (const value of set.values()) {
-    if (value.startsWith(startString)) {
-      result.push(value.replace(startString, ''));
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
+
+      if (valueSubStr && valueSubStr !== value) {
+        result.push(valueSubStr);
+      }
     }
   }
 
