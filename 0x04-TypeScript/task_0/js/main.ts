@@ -20,8 +20,8 @@ const std2: Student = {
 };
 
 const students: Student[] = [std1, std2];
-
-const table = document.querySelector('#students-table tbody');
+const table = document.createElement('table');
+const body = document.createElement('tbody');
 
 students.forEach(function (student: Student) {
   const tableRow = document.createElement('tr');
@@ -29,5 +29,8 @@ students.forEach(function (student: Student) {
     <td>${student.firstname}</td>
     <td>${student.location}</td>
   `;
-  table.appendChild(tableRow);
+  body.appendChild(tableRow);
 });
+
+table.appendChild(body);
+document.body.appendChild(table);
