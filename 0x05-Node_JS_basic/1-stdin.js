@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const process = require("process");
 process.stdin.setEncoding("utf-8");
 
