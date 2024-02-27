@@ -3,13 +3,11 @@ const fs = require('fs');
 
 const args = process.argv;
 const app = http.createServer((req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host}`);
-  const route = url.pathname;
-  if (route === '/') {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello Holberton School!');
-  } else if (route === '/students') {
+  const route = req.url;
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  if (route === '/') res.end('Hello Holberton School!');
+  else if (route === '/students') {
     // file path
     const path = args[2];
     // read from file
