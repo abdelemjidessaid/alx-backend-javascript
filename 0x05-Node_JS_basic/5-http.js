@@ -12,7 +12,7 @@ const app = http.createServer((req, res) => {
     const path = args[2];
     // read from file
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
-      if (err) res.end('');
+      if (err) res.end('Cannot load the database');
 
       res.write('This is the list of our students\n');
       const lines = data.split('\n').slice(1, -1);
