@@ -1,9 +1,7 @@
 const http = require('http');
 const fs = require('fs');
-const countStudents = require('./3-read_file_async');
 
 const args = process.argv;
-
 const app = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const route = url.pathname;
@@ -16,7 +14,7 @@ const app = http.createServer((req, res) => {
     const path = args[2];
     // read from file
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
-      if (err) res.end('Cannot load the database');
+      if (err) res.end('');
 
       res.write('This is the list of our students\n');
       const lines = data.split('\n').slice(1, -1);
