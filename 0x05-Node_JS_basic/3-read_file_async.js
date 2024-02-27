@@ -23,10 +23,12 @@ function countStudents(path) {
       });
 
       console.log(`Number of students: ${lines.length}`);
-      for (const k in fields) {
-        if (Object.hasOwnProperty.call(fields, k)) {
-          const e = fields[k];
-          console.log(`Number of students in ${k}: ${e}. List: ${students[k]}`);
+      for (const key in fields) {
+        if (Object.hasOwnProperty.call(fields, key)) {
+          const element = fields[key];
+          console.log(
+            `Number of students in ${key}: ${element}. List: ${students[key]}`
+          );
         }
       }
 
