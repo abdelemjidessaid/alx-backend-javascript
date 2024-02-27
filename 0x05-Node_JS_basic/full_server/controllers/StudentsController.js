@@ -1,27 +1,25 @@
-import readDatabase from '../utils';
+const readDatabase = require('../utils');
 
 module.exports = class StudentsController {
   static getAllStudents(request, response) {
     readDatabase(process.argv[2])
       .then((data) => {
-        let result = 'This is the list of our students';
+        let printData = 'This is the list of our students';
         for (const field in data) {
           if (Object.hasOwnProperty.call(data, field)) {
-            const s = data[field];
-            result += `\nNumber of students in ${field}: ${s.length}. List: ${s}`;
+            const element = data[field];
+            printData += `\nNumber of students in ${field}: ${element.number}. ${element.students}`;
           }
         }
-        response.send(result);
+        response.send(printData);
       })
-      .catch((error) => {
-        response.send(error.message);
+      .catch((err) => {
+        response.send(err.message);
       });
   }
 
   static getAllStudentsByMajor(request, response) {
-    if (!['SWE', 'CS'].includes(request.params.major)) {
-      response.status(500).send('Major parameter must be CS or SWE');
-    }
+    if (!['SWE', 'CS'].includes(request.params.major)) response.status(500).send('Major parameter must be CS or SWE');
     readDatabase(process.argv[2])
       .then((data) => {
         const printData = data[request.params.major].students;
