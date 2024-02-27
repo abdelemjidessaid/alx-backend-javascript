@@ -44,16 +44,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
   res.write('This is the list of our students\n');
   countStudents(process.argv[2])
     .then((data) => {
-      res.write(`Number of students: ${data.numberStudents}\n`);
-      res.write(data.listStudents.join('\n'));
-      res.end('\n');
+      res.write(data.numberStudents);
+      res.end(data.listStudents.join('\n'));
     })
-    .catch((error) => {
-      res.end(error.message);
+    .catch((err) => {
+      res.end(err.message);
     });
 });
 
