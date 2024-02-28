@@ -8,5 +8,4 @@ module.exports = function calculateNumber(type, a, b) {
   } else if (type === 'SUM') {
     return round(a) + round(b);
   }
-  return 0;
 };
