@@ -4,32 +4,43 @@ const calculateNumber = require('./1-calcul');
 
 describe('* Unittest for calculateNumber function', function () {
   // SUM tests
-  describe('Testing SUM', function () {
-    it('should return 1', function () {
-      const result = calculateNumber('SUM', 0, 1.2);
-      expect(result).to.equal(1);
-    });
-    it('should return 2', function () {
-      const result = calculateNumber('SUM', 0.5, 1.2);
-      expect(result).to.equal(2);
-    });
+  describe('Testing 0.2 + 0.2', function () {
     it('should return 0', function () {
       const result = calculateNumber('SUM', 0.2, 0.2);
       expect(result).to.equal(0);
     });
+  });
+  describe('Testing 0.5 + 1.2', function () {
+    it('should return 2', function () {
+      const result = calculateNumber('SUM', 0.5, 1.2);
+      expect(result).to.equal(2);
+    });
+  });
+  describe('Testing 0 + 1.2', function () {
+    it('should return 1', function () {
+      const result = calculateNumber('SUM', 0, 1.2);
+      expect(result).to.equal(1);
+    });
+  });
+  describe('Testing 0.5 + 0.5', function () {
     it('should return 2', function () {
       const result = calculateNumber('SUM', 0.5, 0.5);
       expect(result).to.equal(2);
     });
+  });
+  describe('Testing -10 + 0.5', function () {
     it('should return -9', function () {
       const result = calculateNumber('SUM', -10, 0.5);
       expect(result).to.equal(-9);
     });
+  });
+  describe('Testing -0.1 + -0.5', function () {
     it('should return 0', function () {
       const result = calculateNumber('SUM', -0.1, -0.5);
       expect(result).to.equal(0);
     });
   });
+
   // SUBTRACT tests
   describe('Testing SUBTRACT', function () {
     it('should return 0', function () {
