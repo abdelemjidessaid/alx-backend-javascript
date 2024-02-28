@@ -1,6 +1,7 @@
 const chai = require('chai');
-const expect = chai.expect;
 const calculateNumber = require('./1-calcul');
+
+const expect = chai.expect;
 
 describe('* Unittest for calculateNumber function', function () {
   // SUM tests
