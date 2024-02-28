@@ -63,6 +63,14 @@ describe('* Unittest for calculateNumber function', function () {
       const result = calculateNumber('SUBTRACT', 0.6, -0.6);
       expect(result).to.equal(2);
     });
+    it('should return undefined', function () {
+      const result = calculateNumber('', 0, 0);
+      expect(result).to.equal(undefined);
+    });
+    it('should return undefined', function () {
+      const result = calculateNumber(0, 0);
+      expect(result).to.equal(undefined);
+    });
   });
   // DIVIDE tests
   describe('Testing DIVIDE', function () {
